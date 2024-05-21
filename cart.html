@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <script src="/tailwind/3.4.3.js"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#78dcc7",
+                "blue": "#2d58a7",
+                "yellow": "#fee278",
+                "red": "#ee6867",
+                "gray": "#f0f0f0",
+                "white": "#fff",
+                "black": "#000",
+                "dark-gray": "#d9d9d9",
+                "ui-blue": "#266ef1",
+                "add-blue": "#2d58a7",
+              },
+              boxShadow: {
+                "default": "0 4px 15px 0 rgba(0, 0, 0, 0.2);"
+              }
+            },
+            borderRadius: {
+              "5": "5px",
+              "8": "8px",
+              "15": "15px"
+            },
+            width: {
+              'fit-content': 'fit-content'
+            },
+            fontSize: {
+              "h1": "1.7em",
+              "h2": "1.42em",
+              "h3": "1.14em",
+              "message": "0.85em"
+            }
+          }
+        }
+      </script>
+      <style>
+        * {
+          transition: ease .3s;
+          transition-property: font-weight opacity background-color;
+        }
+
+        html, body {
+          font-size: 14px;
+        }
+      </style>
+</head>
+<body class="">
+    <div class="container mx-auto flex flex-col gap-4">
+        <h1 class="text-h1 font-bold">Утверждение в печать</h1>
+    </div>
+  <div class="container py-6 grid grid-cols-[2fr_1fr] gap-4 mx-auto items-start">
+    <div class="flex flex-col items-start gap-4">
+      <!-- Таблица с параметрами -->
+      <div class="rounded-15 overflow-hidden border-dark-gray border-[1px]  w-[100%]">
+        <table class="border-collapse w-[100%] m-[-1px]" style="width: calc(100% + 2px);">
+          <thead>
+            <tr class="bg-gray">
+              <th class="border border-dark-gray w-[70%] py-5 font-medium">Параметры заказа</th>
+              <th class="border border-dark-gray w-[15%] py-5 font-medium">Количество</th>
+              <th class="border border-dark-gray w-[15%] py-5 font-medium">Цена</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="relative border border-dark-gray py-6 px-12">
+                <ul>
+                    <li>Формат печати: 500х700 мм</li>
+                    <li>Красочность печати: 4+4</li>
+                    <li>Очередность печати: в подбор</li>
+                    <li>Вид бумаги: Мелованная </li>
+                    <li>Тип бумаги: Глянцевая</li>
+                    <li>Плотность бумаги: 150 г/м2</li>
+                    <li>Ламинация: Глянцевая 1+0</li>
+                    <li>3D лак: 1+0</li>
+                    <li>3D фольга: 1+0 золото</li>
+                    <li>Резка: Не резать</li>
+                </ul>
+                <div class="absolute right-6 top-6 flex items-center gap-2">
+                    <img class="cursor-pointer" src="/icons/copy.svg" alt="">
+                    <img class="cursor-pointer" src="/icons/trash.svg" alt="">
+                </div>
+              </td>
+              <td class="border border-dark-gray py-6 px-12 text-center">
+                100
+              </td>
+              <td class="border border-dark-gray py-6 px-12 text-center">
+                3090&nbsp;₽
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Сумма заказа -->
+    <div class="w-full mx-auto flex flex-col gap-4">
+        <div class="shadow-default p-6 rounded-15 flex flex-col gap-4">
+            <h2 class="text-h2 font-bold">Сумма заказа</h2>
+            <ul>
+                <li class="flex items-center justify-between text-h3 font-bold"><span>Готовность</span><span>17.04</span></li>
+                <li class="flex items-center justify-between text-h3 font-bold"><span>Полос</span><span>1</span></li>
+                <li class="flex items-center justify-between text-h3 font-bold"><span>Тираж</span><span>100 экз.</span></li>
+              </ul>
+            <hr class="border-gray border-[1px]" />
+            <div class="flex flex-wrap justify-between">
+                <h3 class="font-bold text-h2 w-[50%]">Итог:</h3>
+                <span class="font-bold text-h2 w-[50%] text-right">3090 ₽</span>
+                <span class="text-message w-full opacity-60 w-full">в том числе НДС</span>
+            </div>
+            <a href="#" class="w-full inline-block bg-black text-white font-bold text-h2 text-center py-4 rounded-15">Оформить заказ</a>
+            <div>
+                <label class="flex items-start  gap-4" id="accept">
+                <input hidden for="accept" type="checkbox">
+                <div class="bg-primary border-primary border-[2px] border-gray w-[20px] h-[20px] rounded-[4px] mt-1">
+                <svg class="m-[1px]" xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 15 13" fill="none">
+                    <path d="M1 6.5L6.5 11.5L13.5 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                </div>
+                <p class="text-message opacity-60 leading-5">Нажимая на кнопку, вы соглашаетесь с <a class="text-primary" href="#">Условиями обработки персональных данных</a>, а также с <a class="text-primary" href="#">Условиями продажи</a></p>
+            <label>
+            </div>
+            </div>
+        </div>
+        </div>
+  </div>
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой профиль</title>
+    <script src="/tailwind/3.4.3.js"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#78dcc7",
+                "blue": "#2d58a7",
+                "yellow": "#fee278",
+                "red": "#ee6867",
+                "gray": "#f0f0f0",
+                "green": "#00C37D",
+                "white": "#fff",
+                "black": "#000",
+                "dark-gray": "#d9d9d9",
+                "ui-blue": "#266ef1",
+                "add-blue": "#2d58a7",
+              },
+              boxShadow: {
+                "default": "0 4px 15px 0 rgba(0, 0, 0, 0.2);"
+              }
+            },
+            borderRadius: {
+              "5": "5px",
+              "8": "8px",
+              "10": "10px",
+              "15": "15px"
+            },
+            width: {
+              'fit-content': 'fit-content'
+            },
+            fontSize: {
+              "h1": "1.7em",
+              "h2": "1.42em",
+              "h3": "1.14em",
+              "message": "0.85em"
+            }
+          }
+        }
+      </script>
+      <style>
+        * {
+          transition: ease .3s;
+          transition-property: font-weight opacity background-color;
+        }
+
+        html, body {
+          font-size: 14px;
+        }
+      </style>
+</head>
+<body class="">
+    <div class="container mx-auto flex flex-col gap-4">
+        <h1 class="text-h1 font-bold">Мой профиль</h1>
+    </div>
+    <div class="container py-6 grid grid-cols-[minmax(224px,_1fr)_3fr] gap-4 mx-auto items-start">
+
+        <div class="flex flex-col gap-6">
+
+            <!-- Имя с аваторкой -->
+            <div class="flex flex-col items-center gap-3">
+                <img class="w-[100%] rounded-[50%] aspect-square" src="/images/portpaint.jpg" alt="">
+                <!-- Кнопка "Изименить параметры" -->
+                <a href="#" class="inline-block py-4 px-8 bg-gray rounded-15 font-medium text-center">Изменить фото</a>
+                <h2 class="text-h2 font-bold">Михаил Мигалов</h2>
+            </div>
+
+
+            <!-- Пользовательское меню -->
+            <ul class="flex flex-col gap-2 shadow-default w-[180px] rounded-10 py-4 px-8 mx-auto">
+                <li><a class="font-medium hover:text-primary text-primary" href="#">Личные данные</a></li>
+                <li><a class="font-medium hover:text-primary" href="#">Заказы</a></li>
+                <li><a class="font-medium hover:text-primary" href="#">Данные компании</a></li>
+                <li><a class="font-medium hover:text-primary" href="#">Адреса</a></li>
+                <li><a class="font-medium hover:text-primary" href="#">Контакты</a></li>
+                <li><a class="font-medium hover:text-primary" href="#">Документы</a></li>
+                <li><a class="font-medium hover:text-primary" href="#">Файлы</a></li>
+                <li><a class="font-medium text-red hover:text-primary" href="#">Выйти</a></li>
+            </ul>
+
+            <!-- Контакты персонального менеджера -->
+            <div class="flex flex-col gap-5">
+                <h3 class="text-h3 font-bold">Ваш персональный менеджер</h3>
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-2">
+                        <img src="/icons/avatar.svg" alt="">
+                        <h4 class="text-h3 font-bold">Дмитрий Кумченко</h4>
+                    </div>
+                    <div>
+                        <p>+7 (495) 215-08-77  доб. 110<p/>
+                        <p><a href="mailto:d.kumchenko@fineart-print.ru">d.kumchenko@fineart-print.ru</a></p>
+                    </div>
+                    <a class="inline-block bg-primary rounded-15 py-4 w-[100%] font-medium text-center" href="https://wa.me/+74952150877">Написать в WhatsApp</a>
+                    </div>
+                </div>
+        </div>
+
+        <ul class="flex flex-col gap-5">
+            <li class="bg-gray px-6 py-5 rounded-15 flex flex-row justify-between gap-4">
+                <div class="flex flex-col lg:flex-row items-center gap-2 lg:gap-5">
+                  <h3 class="text-[1.125em] font-medium">Заказ №0002</h3>
+                  <span class="bg-primary rounded-8 text-message font-medium min-w-[10em] py-2 text-center">Оформлен</span>
+                </div>
+                <div class="flex items-center justify-between gap-5">
+                    <div class="flex flex-col items-start">
+                      <span class="text-h2 font-bold">3090 ₽</span>
+                      <span class="text-sm opacity-60 rounded-8 text-message">в том числе НДС</span>
+                    </div>
+                    <button class="bg-dark-gray p-4 rounded-15 text-[.875em] font-medium">Отменить заказ</button>
+                    <img src="/icons/copy.svg" alt="">
+                    <img src="/icons/arrow.svg" alt="">
+                </div>
+            </li>
+            <li class="bg-gray px-6 py-5 rounded-15 flex flex-row justify-between gap-4">
+              <div class="flex flex-col lg:flex-row items-center gap-2 lg:gap-5">
+                <h3 class="text-[1.125em] font-medium">Заказ №0002</h3>
+                <span class="bg-green rounded-8 text-message font-medium min-w-[10em] py-2 text-center text-white">Оформлен</span>
+              </div>
+              <div class="flex items-center justify-between gap-5">
+                  <div class="flex flex-col items-start">
+                    <span class="text-h2 font-bold">3090 ₽</span>
+                    <span class="text-sm opacity-60 rounded-8 text-message">в том числе НДС</span>
+                  </div>
+                  <button class="bg-dark-gray p-4 rounded-15 text-[.875em] font-medium">Отменить заказ</button>
+                  <img src="/icons/copy.svg" alt="">
+                  <img src="/icons/arrow.svg" alt="">
+              </div>
+          </li>
+        </ul>
+
+        
+    </div>
+  </div>
+    
+    
+    
+</body>
+</html>
